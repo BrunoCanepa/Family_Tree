@@ -7,24 +7,31 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node n1 = new Node(1);
-            Node n2 = new Node(2);
-            Node n3 = new Node(3);
-            Node n4 = new Node(4);
-            Node n5 = new Node(5);
-            Node n6 = new Node(6);
-            Node n7 = new Node(7);
+            PersonNode Juan = new PersonNode("Juan", 88);
+            PersonNode Mario = new PersonNode("Mario", 50);
+            PersonNode Ana = new PersonNode("Ana", 43);
+            PersonNode María = new PersonNode("María", 52);
+            PersonNode Vida = new PersonNode("Vida", 26);
+            PersonNode Bruno = new PersonNode("Bruno", 27);
+            PersonNode Noah = new PersonNode("Noah", 13);
+            PersonNode Luna = new PersonNode("Luna", 13);
 
-            n1.AddChildren(n2);
-            n1.AddChildren(n3);
+            Juan.AddChildren(Mario);
+            Juan.AddChildren(María);
 
-            n2.AddChildren(n4);
-            n2.AddChildren(n5);
+            Mario.AddChildren(Vida);
+            Ana.AddChildren(Vida);
 
-            n3.AddChildren(n6);
-            n3.AddChildren(n7);
+            Vida.AddChildren(Noah);
+            Vida.AddChildren(Luna);
+            Bruno.AddChildren(Noah);
+            Bruno.AddChildren(Luna);
 
-            // visitar el árbol aquí
+            Print print = new Print();
+            Console.WriteLine(print.Edades(Vida));
+            Console.WriteLine(print.NombreLargo(Juan));
+            Console.WriteLine(print.Mayor(Juan));
+
         }
     }
 }
